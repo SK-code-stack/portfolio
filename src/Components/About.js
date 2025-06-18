@@ -4,13 +4,13 @@ import salman from '../images/salman.png'
 
 export default function About() {
       const { darkMode } = useTheme();
-
+    
   return (
-    <><div className="mb-16 pt-20 -mt-20 z-50" id='about' >
-        <h1   className={`abouttxt mb-16 font-custom  bg-gradient-to-b text-5xl flex justify-center ${
+    <><div className="mb-16 py-20 -mt-20  " id='about' >
+         <h1 className={` font-custom  bg-gradient-to-b text-5xl flex justify-center ${
               darkMode ? 'from-zinc-200 via-zinc-400 to-zinc-50' : 'from-zinc-300 via-zinc-900 to-zinc-300'
             } bg-clip-text font-light tracking-wide text-transparent transition-all duration-1000`}>About<h1 className='color_animate '>&nbsp;Me</h1></h1>
-        <div className="my-2 mx-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="my-2 mt-16 mx-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Image section */}
         <div className="imgdiv flex items-center justify-center order-1 md:order-2 ">
             <img src={salman} alt="salman Khan" className='myimg h-3/4 ' />

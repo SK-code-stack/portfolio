@@ -21,7 +21,7 @@ export default function NavBar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 text-custom-myblack dark:text-custom-txt ">
-            <a href="#" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Home</a>
+            <a href="#home" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Home</a>
             <a href="#about" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">About Me</a>
             <a href="#skills" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Skills</a>
             <a href="#projects" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Projects</a>

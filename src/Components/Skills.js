@@ -32,7 +32,7 @@ export default function Skills() {
   
   return (
     <>
-    <div className='my-32' id='skills'>
+    <div className='pt-20  -mt-24 mb-8  z-50 h-full' id='skills'>
         <h1 className={` font-custom  bg-gradient-to-b text-5xl flex justify-center ${
               darkMode ? 'from-zinc-200 via-zinc-400 to-zinc-50' : 'from-zinc-300 via-zinc-900 to-zinc-300'
             } bg-clip-text font-light tracking-wide text-transparent transition-all duration-1000`}>Tech<h1 className='color_animate '>&nbsp;Stack</h1></h1>

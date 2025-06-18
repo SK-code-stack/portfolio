@@ -3,8 +3,10 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import { ThemeProvider } from './Context/Theme';
 import Main from './Components/Main';
-import Skills from './Components/Skills';
 import About from './Components/About';
+import Skills from './Components/Skills';
+import Projects from './Components/Projects';
+import Contact from './Components/Contact';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -33,6 +35,8 @@ function App() {
         <Main />
         <About />
         <Skills />
+        <Projects />
+        <Contact />
     </ThemeProvider>
   );
 }

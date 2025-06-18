@@ -6,7 +6,7 @@ export default function Main() {
 
   return (
     <>
-<div className="-mt-16 relative min-h-screen w-full  flex items-center justify-center">
+<div className="-mt-16 relative min-h-screen h-dvh w-full  flex items-center justify-center" id='home'>
         {/* Background effect */}
       <div
         className={`absolute top-1/2 left-1/2 z-0 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl ${
