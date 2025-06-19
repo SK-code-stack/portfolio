@@ -118,7 +118,7 @@ export default function Projects() {
         <div className="flex justify-center p-5">
           <a
             href="#project"
-            className="button transition-all duration-1000"
+            className="button font-custom transition-all duration-1000"
           >
             see more
           </a>
