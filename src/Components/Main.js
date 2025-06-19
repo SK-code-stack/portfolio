@@ -1,12 +1,14 @@
 import React from 'react';
 import useTheme from '../Context/Theme';
+import SalmanKhan_cv from '../Resume/SalmanKhan_cv.pdf'
 
 export default function Main() {
   const { darkMode } = useTheme();
 
   return (
     <>
-<div className="-mt-16 relative min-h-screen h-dvh w-full  flex items-center justify-center" id='home'>
+  <div className="w-full overflow-hidden ">
+  <div className="-mt-16 relative min-h-screen h-dvh w-full  flex items-center justify-center" id='home'>
         {/* Background effect */}
       <div
         className={`absolute top-1/2 left-1/2 z-0 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl ${
@@ -25,7 +27,9 @@ export default function Main() {
             darkMode ? 'text-zinc-100' : 'text-zinc-900'
           }`}
         >
-          <span className=" md:text-nowrap">Let's turn ideas</span>
+          <span 
+
+          className=" md:text-nowrap">Let's turn ideas</span>
           <br className=" hidden md:block" /> into seamless
           <span
             className={` font-custom  bg-gradient-to-b  ${
@@ -55,7 +59,10 @@ export default function Main() {
           <button
             className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10  py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3"
           >
-            <span className="z-10 px-3  text-black dark:text-white transition-colors duration-300 group-hover:text-black">Let's Connect</span>
+            <a 
+            href={SalmanKhan_cv}
+            download="SalmanKhan_cv.pdf" 
+            className="z-10 px-3  text-black dark:text-white transition-colors duration-300 group-hover:text-black">Resume</a>
             <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"></span>
             <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-white p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5">
               <svg
@@ -95,10 +102,10 @@ export default function Main() {
    
         </div>
       </div>
-    </div>
   
 
-    <div class="-mt-20 curve_effect relative h-60 w-full z-[19] transition-all duration-1000">
+    </div>
+    <div class="-mt-20 curve_effect relative h-60 w-dvw  z-[19] transition-all duration-1000">
       <div class="absolute bottom-0 left-1/2 z-0 h-[400px] w-[1200px] -translate-x-1/2 transform overflow-hidden dt" >
         <div class="absolute bottom-[167px] left-1/2 h-[111px] w-[787px] -translate-x-1/2 transform overflow-hidden bg-[radial-gradient(50%_50%_at_50%_50%,#5506ba_0%,rgba(10,10,10,0)_100%)] blur-[57px] du" >
         </div>
@@ -108,7 +115,7 @@ export default function Main() {
         </div>
       </div>
     </div>
-    {/* <div id="about"></div> */}
+    </div>
  
     </>
   );

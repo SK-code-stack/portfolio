@@ -2,6 +2,27 @@
     margin: 0;
     padding: 0;
 }
+
+/* Base Scrollbar */
+html {
+    scroll-behavior: smooth;
+  }
+/* Basic Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #003cff, #ff9100, #ff0000);
+    border-radius: 10px;
+  }
+  
+  /* We'll dynamically fill this with scroll progress */
+  ::-webkit-scrollbar-track {
+    background: var(--scroll-gradient, transparent);
+    transition: background 0.2s linear;
+  }
+  
 .nav{
     width: 90rem;
 }

@@ -29,6 +29,21 @@ function App() {
     });
   };
 
+
+  // my custom scroll bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const scrollPercent = scrollTop / scrollHeight;
+
+    // Create a dynamic gradient: from top to scroll point — filled, rest transparent
+    const gradient = `linear-gradient(to bottom, #003cff ${scrollPercent * 100}%, transparent ${scrollPercent * 100}%)`;
+
+    document.documentElement.style.setProperty('--scroll-gradient', gradient);
+  });
+
+
   return (
     <ThemeProvider value={{ darkMode, toggleDarkMode }}>
         <NavBar />
