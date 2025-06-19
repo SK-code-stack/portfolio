@@ -118,7 +118,7 @@ export default function Projects() {
         <div className="flex justify-center p-5">
           <a
             href="#project"
-            className="bg-custom-mylight text-custom-myblack hover:bg-blue-600 dark:hover:bg-blue-600 dark:bg-custom-myblack dark:text-custom-mylight px-2 py-1 rounded myshadow active:scale-95 transition-all duration-1000"
+            className="button transition-all duration-1000"
           >
             see more
           </a>

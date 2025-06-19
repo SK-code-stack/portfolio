@@ -1,7 +1,7 @@
 import React from 'react';
 import useTheme from '../Context/Theme';
 import { motion } from 'framer-motion'; 
-
+import { containerVariants, itemVariants } from '../variants';
 export default function Skills() {
   const { darkMode } = useTheme();
 
@@ -29,21 +29,7 @@ export default function Skills() {
     { name: 'PostgreSQL', icon: require('../images/pos.png') },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        duration: 0.5,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   return (
     <div className='pt-20 -mt-24 mb-8 z-50 h-full' id='skills'>

@@ -46,6 +46,7 @@ export const fadeUp = {
     visible: { opacity: 1, y: 0 },
   };  
 
+
  export const fadeLeft = {
     hidden: { opacity: 0, x: -50 },
     visible: (i = 0) => ({
@@ -85,3 +86,5 @@ export const fadeSlide = {
     }),
   };
   
+
+
