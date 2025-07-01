@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useTheme from '../Context/Theme';
+import { HashLink } from 'react-router-hash-link';
 
 export default function NavBar() {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -21,11 +22,11 @@ export default function NavBar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 text-custom-myblack dark:text-custom-txt ">
-            <a href="#home" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Home</a>
-            <a href="#about" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">About Me</a>
-            <a href="#skills" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Skills</a>
-            <a href="#projects" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Projects</a>
-            <a href="#contact" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Contact</a>
+            <HashLink to="/#home" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Home</HashLink>
+            <HashLink to="/#about" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">About Me</HashLink>
+            <HashLink to="/#skills" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Skills</HashLink>
+            <HashLink to="/#projects" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Projects</HashLink>
+            <HashLink to="/#contact" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Contact</HashLink>
             <button
               onClick={toggleDarkMode}
               className="ml-4 p-3 rounded  transition-all duration-500 flex items-center justify-between w-12 relative overflow-hidden"
@@ -69,11 +70,11 @@ export default function NavBar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden px-4 py-3  bg-custom-mylight dark:bg-custom-myblack text-black dark:text-custom-mylight space-y-2">
-          <a href="#home" onClick={handleMobileMenuToggle} className="block ">Home</a>
-          <a href="#about" onClick={handleMobileMenuToggle} className="block ">About Me</a>
-          <a href="#skills" onClick={handleMobileMenuToggle} className="block ">Skills</a>
-          <a href="#projects" onClick={handleMobileMenuToggle} className="block ">Projects</a>
-          <a href="#contact" onClick={handleMobileMenuToggle} className="block ">Contact</a>
+            <HashLink to="/#home" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Home</HashLink>
+            <HashLink to="/#about" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">About Me</HashLink>
+            <HashLink to="/#skills" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Skills</HashLink>
+            <HashLink to="/#projects" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Projects</HashLink>
+            <HashLink to="/#contact" className="  dark:hover:bg-custom-lightgray hover:rounded-lg px-2 transition">Contact</HashLink>
           
         </div>
       )}

@@ -2,27 +2,18 @@ import React from 'react';
 import useTheme from '../Context/Theme';
 import { motion } from 'framer-motion'; 
 import { containerVariants, itemVariants } from '../variants';
-import { homeProject } from "../data"; 
-import { Link } from 'react-router-dom';
+import { projectpage } from "../data"; 
 
 
-export default function Projects() {
+export default function ProjectPage() {
   const { darkMode } = useTheme();
-  const projects = homeProject;
+  const projects = projectpage;
 
   
 
   return (
-    <div className="mb-16 pt-20 -mt-20 transition-all duration-1000" id='projects'>
-      <h1
-        className={`mb-16 font-custom bg-gradient-to-b text-5xl flex justify-center ${
-          darkMode
-            ? 'from-zinc-200 via-zinc-400 to-zinc-50'
-            : 'from-zinc-300 via-zinc-900 to-zinc-300'
-        } bg-clip-text font-light tracking-wide text-transparent transition-all duration-1000`}
-      >
-        My<h1 className="color_animate">&nbsp;Work</h1>
-      </h1>
+    <div className="mb-16 pt-20 -mt-20 transition-all duration-1000">
+
 
       <motion.div
         variants={containerVariants}
@@ -80,14 +71,7 @@ export default function Projects() {
         ))}
       </motion.div>
 
-      <div className="flex justify-center p-5">
-        <Link
-          to="/ProjectPage"
-          className="button font-custom transition-all duration-1000"
-        >
-          See More
-        </Link>
-      </div>
+
     </div>
   );
 }

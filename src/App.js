@@ -4,11 +4,13 @@ import { ThemeProvider } from './Context/Theme';
 import NavBar from './Components/NavBar';
 import Main from './Components/Main';
 import Preloader from './Components/Preloader';
+import {BrowserRouter,  Routes, Route } from 'react-router-dom';
 
 const About = React.lazy(() => import('./Components/About'));
 const Skills = React.lazy(() => import('./Components/Skills'));
 const Projects = React.lazy(() => import('./Components/Projects'));
 const Contact = React.lazy(() => import('./Components/Contact'));
+const ProjectPage = React.lazy(() => import('./Components/ProjectPage'));
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -58,14 +60,23 @@ function App() {
 
   return (
     <ThemeProvider value={{ darkMode, toggleDarkMode }}>
-      <NavBar />
-      <Suspense fallback={<Preloader />}>
-        <Main />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </Suspense>
+      <BrowserRouter>
+        <NavBar />
+        <Suspense fallback={<Preloader />}>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Main />
+                <About />
+                <Skills />
+                <Projects />
+                <Contact />
+              </>
+            } />
+            <Route path="/ProjectPage" element={<ProjectPage />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
