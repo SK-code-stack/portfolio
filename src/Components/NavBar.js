@@ -70,7 +70,7 @@ export default function NavBar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden px-4 py-3  bg-custom-mylight dark:bg-custom-myblack text-black dark:text-custom-mylight space-y-2">
+        <div className="md:hidden px-4 py-3 text-black dark:text-custom-mylight space-y-2">
           <HashLink to="/#home" smooth onClick={handleMobileMenuToggle} className="block ">Home</HashLink>
           <HashLink to="/#about" smooth onClick={handleMobileMenuToggle} className="block ">About Me</HashLink>
           <HashLink to="/#skills" smooth onClick={handleMobileMenuToggle} className="block ">Skills</HashLink>

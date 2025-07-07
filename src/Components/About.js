@@ -37,7 +37,7 @@ export default function About() {
             viewport={{ once: false }}
             className="imgdiv flex items-center justify-center order-1 md:order-2"
         >
-        <img src={`${BASE_URL}${info.profile}`} alt="salman Khan" className="myimg h-3/4" />
+        <img src={`${info.profile}`} alt="salman Khan" className="myimg h-3/4" />
         </motion.div>
 
 

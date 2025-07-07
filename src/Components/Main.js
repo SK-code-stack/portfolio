@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import useTheme from '../Context/Theme';
-import api, { BASE_URL } from '../Api';
+import api from '../Api';
 
 export default function Main() {
   const { darkMode } = useTheme();
@@ -68,14 +68,14 @@ export default function Main() {
         </h1>
 
         {/* Buttons */}
-        <div className="z-[100] mt-4 flex flex-col items-center justify-center gap-6 sm:flex-row md:mt-8 md:gap-10 animate-fadeInUp">
+        <a className="z-[100] mt-4 flex flex-col items-center justify-center gap-6 sm:flex-row md:mt-8 md:gap-10 animate-fadeInUp"
+          href={`${file.file}`} download 
+            target = "blank">
           <button
             className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10  py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3"
           >
-            <a 
-            href={`${BASE_URL}${file.file}`} download 
-            target = "blank"
-            className="z-10 px-3  text-black dark:text-white transition-colors duration-300 group-hover:text-black">Resume</a>
+            <button 
+            className="z-10 px-3  text-black dark:text-white transition-colors duration-300 group-hover:text-black">Resume</button>
             <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"></span>
             <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-white p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5">
               <svg
@@ -113,7 +113,7 @@ export default function Main() {
             </span>
           </button>
    
-        </div>
+        </a>
       </div>
   
 

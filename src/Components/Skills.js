@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import useTheme from '../Context/Theme';
 import { motion } from 'framer-motion'; 
 import { containerVariants, itemVariants } from '../variants';
-import api, { BASE_URL } from '../Api';
+import api from '../Api';
 
 export default function Skills() {
   const { darkMode } = useTheme();
@@ -45,7 +45,7 @@ export default function Skills() {
                 className="bg-custom-mylight dark:bg-custom-myblack px-4 py-2 rounded-md myshadow flex items-center gap-2 cursor-pointer hover:scale-105 transition-all duration-1000"
                 variants={itemVariants}
               >
-                <img src={`${BASE_URL}${icon}`} alt={name} className="h-6" />
+                <img src={`${icon}`} alt={name} className="h-6" />
                 <h1 className="text-sm text-custom-myblack dark:text-custom-mylight">{name}</h1>
               </motion.div>
             ))}

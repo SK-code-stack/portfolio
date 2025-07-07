@@ -39,7 +39,7 @@ export default function ProjectPage() {
               {/* Image */}
               <div className="w-full aspect-[4/3] overflow-hidden rounded-md mb-4">
                 <img
-                  src={`${BASE_URL}${project.image}`}
+                  src={`${project.image}`}
                   alt={project.title}
                   className="w-full h-full object-cover rounded-md"
                 />
