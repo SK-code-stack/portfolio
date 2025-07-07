@@ -1,40 +1,30 @@
-import React, { useEffect, useState } from 'react';
 import useTheme from '../Context/Theme';
-import { motion } from 'framer-motion';
-import { containerVariants, itemVariants } from '../variants';
-import { Link } from 'react-router-dom';
 import api, { BASE_URL } from '../Api';
+import { motion } from 'framer-motion'; 
+import { containerVariants, itemVariants } from '../variants';
+import React, { useEffect, useState } from 'react';
 
-export default function Projects() {
-  const { darkMode } = useTheme();
-  const [project, setProject] = useState([]);
+export default function ProjectPage() {
 
-  useEffect(() => {
-    api.get('HomeProject')
-      .then((res) => {
-        setProject(res.data);
-      })
-      .catch(() => {
-        console.log("Failed to load projects");
-      });
-  }, []);
+    const { darkMode } = useTheme();
+    const [project, setProject] = useState([]);
+
+    useEffect(() => {
+      api.get('projectPage') 
+        .then((res) => {
+          setProject(res.data);
+        })
+        .catch((err) => {
+          console.log("Failed to load projects for project page");
+        });
+    }, []); 
 
   return (
-    <div className="mb-16 pt-20 -mt-20 transition-all duration-1000" id="projects">
-      <h1
-        className={`mb-16 font-custom bg-gradient-to-b text-5xl flex justify-center ${
-          darkMode
-            ? 'from-zinc-200 via-zinc-400 to-zinc-50'
-            : 'from-zinc-300 via-zinc-900 to-zinc-300'
-        } bg-clip-text font-light tracking-wide text-transparent transition-all duration-1000`}
-      >
-        My<p className="color_animate">&nbsp;Work</p>
-      </h1>
-
+    <>
+    
       <motion.div
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial="visible"
         viewport={{ once: false }}
         className="container p-3 mx-auto grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr"
       >
@@ -94,12 +84,9 @@ export default function Projects() {
           </motion.div>
         ))}
       </motion.div>
-
-      <div className="flex justify-center p-5">
-        <Link to="/ProjectPage" className="button font-custom transition-all duration-1000">
-          See more
-        </Link>
-      </div>
-    </div>
-  );
+    </>
+  )
 }
+
+
+

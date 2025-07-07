@@ -1,9 +1,22 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import useTheme from '../Context/Theme';
-import SalmanKhan_cv from '../Resume/SalmanKhan_cv.pdf'
+import api, { BASE_URL } from '../Api';
 
 export default function Main() {
   const { darkMode } = useTheme();
+  const [file, setFile] = useState([])
+
+  useEffect(() => {
+    api.get("resume")
+    .then((res) => {
+      console.log("Resume API response:", res.data); 
+
+      setFile(res.data)
+    })
+    .catch((err) => {
+      console.log("fail to load resume")
+    })
+  },[])
 
   return (
     <>
@@ -60,8 +73,8 @@ export default function Main() {
             className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10  py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3"
           >
             <a 
-            href={SalmanKhan_cv}
-            download="SalmanKhan_cv.pdf" 
+            href={`${BASE_URL}${file.file}`} download 
+            target = "blank"
             className="z-10 px-3  text-black dark:text-white transition-colors duration-300 group-hover:text-black">Resume</a>
             <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"></span>
             <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-white p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5">
@@ -106,17 +119,18 @@ export default function Main() {
 
     </div>
     <div
-        class="-mt-20 curve_effect relative h-60 w-dvw  z-[19] transition-all duration-1000">
-      <div class="absolute bottom-0 left-1/2 z-0 h-[400px] w-[1200px] -translate-x-1/2 transform overflow-hidden dt" >
-        <div class="absolute bottom-[167px] left-1/2 h-[111px] w-[787px] -translate-x-1/2 transform overflow-hidden bg-[radial-gradient(50%_50%_at_50%_50%,#5506ba_0%,rgba(10,10,10,0)_100%)] blur-[57px] du" >
+        className="-mt-20 curve_effect relative h-60 w-dvw  z-[19] transition-all duration-1000">
+      <div className="absolute bottom-0 left-1/2 z-0 h-[400px] w-[1200px] -translate-x-1/2 transform overflow-hidden dt" >
+        <div className="absolute bottom-[167px] left-1/2 h-[111px] w-[787px] -translate-x-1/2 transform overflow-hidden bg-[radial-gradient(50%_50%_at_50%_50%,#5506ba_0%,rgba(10,10,10,0)_100%)] blur-[57px] du" >
         </div>
-        <div class=" absolute right-[-432px] bottom-[-753px] left-[-454px] h-[955px] rounded-[100%] bg-gradient-to-b from-custom-myblack  dark:bg-gradient-to-b dark:from-white to-transparent">
+        <div className=" absolute right-[-432px] bottom-[-753px] left-[-454px] h-[955px] rounded-[100%] bg-gradient-to-b from-custom-myblack  dark:bg-gradient-to-b dark:from-white to-transparent">
         </div>
-        <div  class="absolute  right-[-510px] bottom-[-759px] left-[-532px] aspect-[2.346820809248555/1] h-[956px] rounded-[100%]  bg-custom-mylight dark:bg-custom-myblack  dark:shadow-[inset_0_2px_20px_#fff,0_-10px_50px_1px_#ffffff7d] dl" >
+        <div  className="absolute  right-[-510px] bottom-[-759px] left-[-532px] aspect-[2.346820809248555/1] h-[956px] rounded-[100%]  bg-custom-mylight dark:bg-custom-myblack  dark:shadow-[inset_0_2px_20px_#fff,0_-10px_50px_1px_#ffffff7d] dl" >
         </div>
       </div>
     </div>
     </div>
+    
  
     </>
   );

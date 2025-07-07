@@ -44,7 +44,7 @@ export default function Contact() {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-custom-myblack dark:bg-custom-mylight h-32 w-full rounded-full"></div>
 
               {/* Social Media */}
-              <div class="relative p-5 lg:px-20 flex flex-col md:flex-row items-center justify-center ">
+              <div className="relative p-5 lg:px-20 flex flex-col md:flex-row items-center justify-center ">
 
                 {/* <!-- Social Media --> */}
                 <motion.div

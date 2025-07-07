@@ -2,13 +2,14 @@ import React, { useState, useEffect, Suspense } from 'react';
 import './App.css';
 import { ThemeProvider } from './Context/Theme';
 import NavBar from './Components/NavBar';
-import Main from './Components/Main';
+import Home from './Components/Home';
 import Preloader from './Components/Preloader';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectPage from './Components/ProjectPage';
 
-const About = React.lazy(() => import('./Components/About'));
-const Skills = React.lazy(() => import('./Components/Skills'));
-const Projects = React.lazy(() => import('./Components/Projects'));
-const Contact = React.lazy(() => import('./Components/Contact'));
+
+
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -57,16 +58,27 @@ function App() {
   if (isLoading) return <Preloader />;
 
   return (
+    <Router>
     <ThemeProvider value={{ darkMode, toggleDarkMode }}>
       <NavBar />
-      <Suspense fallback={<Preloader />}>
-        <Main />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </Suspense>
+
+      <Routes>
+        <Route path="/ProjectPage" element={<ProjectPage />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<Preloader />}>
+              <>
+                <Home />
+
+              </>
+            </Suspense>
+          }
+        />
+      </Routes>
     </ThemeProvider>
+    </Router>
+
   );
 }
 
